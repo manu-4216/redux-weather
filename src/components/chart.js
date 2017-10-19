@@ -6,7 +6,7 @@ import {
 } from 'react-sparklines';
 import _ from 'lodash';
 
-function average(data, units) {
+function average(data) {
     return _.round(_.sum(data) / data.length);
 }
 
@@ -18,7 +18,7 @@ export default props => {
                 <SparklinesReferenceLine type="avg" />
             </Sparklines>
             <div className="chart-average">
-                {average(props.data, props.units)} {props.units}
+                {average(props.data)} {props.units}
             </div>
         </div>
     );
